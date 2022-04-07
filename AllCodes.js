@@ -1,3 +1,9 @@
+//Always to use strict mode
+// 'use strict'
+
+//Open Project in live server
+// live-server
+
 //log-> prints(like cout)
 //let -> to define a datatype of variable(can be changed later(datatype))
 //const ->same like let but value cant be changed(must have initial value)
@@ -14,24 +20,30 @@
 // what
 // are
 // you doing`)(this displaces in seperate line)
-
 //Type Conversion and Coercion
 // NaN=(it is a invalid number)
-// console.log(Number("1331") + 10);//converts into int but doesnot change orignial datatype
+// let x = "1331";
+// console.log(typeof (Number(x) + 10));//converts into int but doesnot change orignial datatype here x type is same
 // console.log(String(1331) + 10);//converts into string but doesnot change orignial datatype
 
+
+
 // Type Coercion
-// console.log('I am ' + 23 + ' years old');//(+ converts number to string)
-// console.log('23' - '10' - 3);//(- * and / convert string to number)
-// console.log('23' < '15'); (< converts string into number)
+// console.log('I am ' + 23 + ' years old');//(+ operator converts number to string)
+// console.log('23' - '10' - 3);//(- * and / operator convert string to number)
+// console.log('23' < '15'); (< operator converts string into number)
+
+
 
 //truthy and falsy
 //5 falsy values: 0, '', undefined, null, NaN all others are truthy values
 
-//prompt(take input(displays a box where we can write))-->generates a string
 
-//Strict mode
-// 'use strict';(first code should be this)
+
+//prompt(take input(displays a box where we can write))-->generates a string
+// let x = prompt("What you want to ask","sample input");
+
+
 
 //Functions
 // function declartion(can be called before its declartion)
@@ -50,6 +62,8 @@
 //     // return retirement;-> it is required if we want to return
 //     return `${firstName} retires in ${retirement} years`;
 // }
+
+
 
 // Arrays
 // const years = new Array(1991, 1984, 2008, 2020);
@@ -72,8 +86,6 @@
 // console.log(jonas.firstName);(using dot notation)
 // console.log(jonas['firstName'];(using bracket notation)
 
-//Always to use strict mode
-// 'use strict'
 
 //Primitive Types
 // let lastName = 'Williams';
@@ -89,7 +101,7 @@
 //     age: 27,
 // };
 // const marriedJessica = jessica;
-// marriedJessica.lastName = 'Davis';
+// marriedJessica.lastName = 'Davis';//(changes will be reflected in both)
 // console.log('Before marriage:', jessica);
 // console.log('After marriage:', marriedJessica);//Both will display same result
 
@@ -125,3 +137,23 @@
 // const newArr = [1, 2, ...arr];//(1,2,7,8,9)
 // console.log(newArr);
 // console.log(...newArr);//(logged the individual elemets of the array)
+
+
+//Selectors & Click Events(JAVASCRIPTS PART)
+// document.querySelector('.')//. for class and # for id
+// document.getElementById('id_name')// get id
+// document.querySelector('.').textContent="";
+// document.querySelector('.').value = 23;
+//document.querySelector('.check').addEventListener('click',function(){
+//})
+// document.querySelector('body').style.backgroundColor = '#60b347';
+// document.querySelectorAll('.show-modal');//selects all query with class show-modal
+// modal.classList.add('hidden')(removing and adding classes)
+// modal.classList.remove('hidden')
+//3 types of keyboard events keyup(when we lift up the keypress),keypress(when we are pressing the key),keydown(when we just press the key and release)
+// document.addEventListener('keydown', function (event) {
+//     if (event.key === "Escape") {
+//         closeModal;
+//     }
+// });
+// used for escape key
