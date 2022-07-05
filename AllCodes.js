@@ -117,30 +117,10 @@
 // console.log('Before marriage:', jessica2);
 // console.log('After marriage:', jessicaCopy);
 
-// Destructuring Arrays
-// const arr = [2, 3, 4];
-// const x = arr[0];
-// const y = arr[1];
-// const z = arr[2];
-// console.log(x, y, z);
-// const [a, b, c] = arr;//destruturing arrays(storing element in one go)
-// const [a,,c]//(you can put a hole in the)
-// console.log(a, b, c);
-
-
-//Destructuring Objects
-// const {write the data};
-
-
-//Spread Operator
-// const arr = [7, 8, 9];
-// const newArr = [1, 2, ...arr];//(1,2,7,8,9)
-// console.log(newArr);
-// console.log(...newArr);//(logged the individual elemets of the array)
-
 
 //Selectors & Click Events(JAVASCRIPTS PART)
-// document.querySelector('.')//. for class and # for id
+// document.querySelector('.')//. for class
+// document.querySelector('#')//# for id
 // document.getElementById('id_name')// get id
 // document.querySelector('.').textContent="";
 // document.querySelector('.').value = 23;
@@ -157,3 +137,79 @@
 //     }
 // });
 // used for escape key
+
+//var is function scoped not block scoped where as const and let are block scoped
+
+//Hoisting
+// Makes some types of variables accessible/usable in the code before they are actually declared
+
+//Function Declrations are hoisted(function value)
+//var variables are hoisted(undefined)
+//const let are not hoisted(unitialized)
+
+// Destructuring Arrays
+// const arr = [2, 3, 4];
+// const x = arr[0];
+// const y = arr[1];
+// const z = arr[2];
+// console.log(x, y, z);
+// const [a, b, c] = arr;//destruturing arrays(storing element in one go)
+// const [a,,c]//(you can put a hole in the)
+// console.log(a, b, c);
+
+//Switiching Variables
+// let [main, , secondary] = restaurant.categories;
+// //Switching variables
+// console.log(main, secondary);
+// [main, secondary] = [secondary, main];
+// console.log(main, secondary);
+
+
+//Destructuring Objects
+// const {write the data};
+//Mutating variables
+// let a = 111;
+// let b = 999;
+// const obj = { a: 23, b: 7, c: 14 };
+// ({ a, b } = obj)//store in () as we cant start with {
+
+//Spread Operator(unpacking of array)
+// const arr = [7, 8, 9];
+// const newArr = [1, 2, ...arr];//(1,2,7,8,9)
+// console.log(newArr);
+// console.log(...newArr);//(logged the individual elemets of the array)
+
+//Rest Operator(packing)(opposite of spread)
+// rest is when on left side of equal sign
+// const [a, b, ...others] = [1, 2, 3, 4, 5, 6];
+// others becomes a array
+
+//And and Or Operator (Special Features)
+
+//ShortCircuting Or
+// if first value true it will return that
+// (3 || "Jonas") --> 3
+// if both false return last value
+// (undefined || null) --> null
+
+//AND
+//(0&&"Jonas")--> 0 as we get falsy we return it
+//(7&&"Jonas")--> Jonas Last true value
+
+//Nullish sees nullish value instead of false value
+//(0 ?? "Jonas")--> 0
+// console.log(null ?? "Jonas");-->Jonas
+
+//Optional Chaining
+// console.log(resturant.openingHours.mon?.open);
+
+//Set
+// const x = new Set(["hi", "hi", 5, "hello"]);//same values taken as one
+
+//Map
+// const x = new Map();
+// x.set(5, "hi");
+// x.set("you", 6);
+// console.log(x.get("you"));
+// console.log(x);
+const hoursMap = new Map(Object.entries(openingHour));//convert object into map
