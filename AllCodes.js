@@ -231,32 +231,111 @@
 //Objects pass by refrence and string by value(string value is created as copy)
 
 //call and apply methods
-const lufthansa = {
-    airline: 'Lufthansa',
-    iatacode: 'LH',
-    bookings: [],
-    book(flightNum, name) {
-        console.log(`${name} booked a seat on ${this.airline} flight ${this.iatacode}${flightNum}`);
-        this.bookings.push({ flight: `${this.iatacode}${flightNum}`, name })
-    },
-};
-lufthansa.book(239, 'Anmol Agarwal');
-const eurowings = {
-    airline: 'eurowings',
-    iatacode: 'EL',
-    bookings: [],
-};
-const book = lufthansa.book;
-book.call(eurowings, 24, 'Kushagra Agarwal');
-const flightData = [27, "Jyoti Agarwal"];
-book.apply(eurowings, flightData);
-//or
-book.call(eurowings, ...flightData);
-//bind creates a new function
-const bookEw = book.bind(eurowings);
-bookEw(42, "Sachin Kumar");
-console.log(lufthansa);
-console.log(eurowings);
+// const lufthansa = {
+//     airline: 'Lufthansa',
+//     iatacode: 'LH',
+//     bookings: [],
+//     book(flightNum, name) {
+//         console.log(`${name} booked a seat on ${this.airline} flight ${this.iatacode}${flightNum}`);
+//         this.bookings.push({ flight: `${this.iatacode}${flightNum}`, name })
+//     },
+// };
+// lufthansa.book(239, 'Anmol Agarwal');
+// const eurowings = {
+//     airline: 'eurowings',
+//     iatacode: 'EL',
+//     bookings: [],
+// };
+// const book = lufthansa.book;
+// book.call(eurowings, 24, 'Kushagra Agarwal');
+// const flightData = [27, "Jyoti Agarwal"];
+// book.apply(eurowings, flightData);
+// //or
+// book.call(eurowings, ...flightData);
+// //bind creates a new function
+// const bookEw = book.bind(eurowings);
+// bookEw(42, "Sachin Kumar");
+// console.log(lufthansa);
+// console.log(eurowings);
 
+// Run Function Once
+// Immidatily Invoked Function Expression
+// (function () {
+//     console.log('This will never run again');
+// })();
+// (() => console.log("this will not run again 2"))();
 
+//Closures
+// console.dir();
+// let f;
+// const g = function () {
+//     const a = 23;
+//     f = function () {
+//         console.log(a * 2);
+//     }
+// }
+// g();
+// f();
+
+//Array Methods
+// let arr = ['a', 'b', 'c', 'd', 'e'];
+
+//slice
+// console.log(arr.slice(2));//-> gives array ['c', 'd', 'e']
+// console.log(arr.slice(2, 4));//from 2 to 4
+// console.log(arr.slice(-2));//print from last [d e]
+// console.log(arr.slice(1, -2));//'b' 'c'
+// console.log(arr.slice());//shalow copy of arr
+// console.log([...arr]);//shalow copy way 2
+
+//splice
+// console.log(arr.splice(2));
+// console.log(arr);//it actually removes element
+
+//reverse
+// const arr2 = ['j', 'i', 'h', 'g', 'f']
+// arr2.reverse();
+
+//concat
+// const letters = arr.concat(arr2);
+// console.log(letters);
+
+//looping in arrays
+// const movements = [200, 450, -1, 434, 43, 123, -12, -421, 0, 23];
+//normal method
+// for (const [i, movement] of movements.entries()) {
+//     if (movement > 0) {
+//         console.log(`Movement ${i + 1}: You deposited ${movement}`);
+//     }
+//     else {
+//         console.log(`Movement ${i + 1}: You withdrew ${Math.abs(movement)}`);
+//     }
+// }
+//For each
+// console.log("FOR________EACH");
+// movements.forEach(function (movement, i, arr) {//first element value,2nd index,3rd complete array
+//     if (movement > 0) {
+//         console.log(`Movement ${i + 1}: You deposited ${movement}`);
+//     }
+//     else {
+//         console.log(`Movement ${i + 1}: You withdrew ${Math.abs(movement)}`);
+//     }
+// })
+
+//For each on Maps
+// const currencies = new Map([
+//     ['USD', 'United States Dollat'],
+//     ['EUR', 'Euro'],
+//     ['GBP', 'Pound sterling']
+// ]);
+// currencies.forEach(function (value, key, map) {
+//     console.log(`${key}: ${value}`);
+// })//first is value 2nd key and 3rd map
+
+//For each in sets
+// const currenciesUnique = new Set(['Usd', 'Gbp', 'Usd', 'Eur', 'Eur']);
+// console.log(currenciesUnique);
+// currenciesUnique.forEach(function (value, value, set) {//1st and 2nd both values and third is set
+//     console.log(`${value}: ${value}`);
+// });
 
