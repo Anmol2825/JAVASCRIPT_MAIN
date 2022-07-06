@@ -212,4 +212,51 @@
 // x.set("you", 6);
 // console.log(x.get("you"));
 // console.log(x);
-const hoursMap = new Map(Object.entries(openingHour));//convert object into map
+// const hoursMap = new Map(Object.entries(openingHour));//convert object into map
+// console.log([..x]);//map to array by unpacking
+
+//Strings
+// const a = "anmolagarwal";
+// console.log(a.slice(0, 5));
+// console.log(a.replace('a', 'x'));
+// console.log(a.replaceAll('a', 'x'));
+// console.log("a+very+good+string".split('+'));//converts into array of strings
+// const [firstName, lastName] = 'Anmol Agarwal'.split(' ');
+// console.log(['Mr.', firstName, lastName.toUpperCase()].join(' '));//Joining arrays to a string
+//Padding
+// const message = 'Go to gate 23!';
+// console.log(message.padStart(25, '+').padEnd(30, '+'))//length to 23! is 25 and then last 5 + then length 30
+
+//Functions
+//Objects pass by refrence and string by value(string value is created as copy)
+
+//call and apply methods
+const lufthansa = {
+    airline: 'Lufthansa',
+    iatacode: 'LH',
+    bookings: [],
+    book(flightNum, name) {
+        console.log(`${name} booked a seat on ${this.airline} flight ${this.iatacode}${flightNum}`);
+        this.bookings.push({ flight: `${this.iatacode}${flightNum}`, name })
+    },
+};
+lufthansa.book(239, 'Anmol Agarwal');
+const eurowings = {
+    airline: 'eurowings',
+    iatacode: 'EL',
+    bookings: [],
+};
+const book = lufthansa.book;
+book.call(eurowings, 24, 'Kushagra Agarwal');
+const flightData = [27, "Jyoti Agarwal"];
+book.apply(eurowings, flightData);
+//or
+book.call(eurowings, ...flightData);
+//bind creates a new function
+const bookEw = book.bind(eurowings);
+bookEw(42, "Sachin Kumar");
+console.log(lufthansa);
+console.log(eurowings);
+
+
+
