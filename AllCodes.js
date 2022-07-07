@@ -339,3 +339,20 @@
 //     console.log(`${value}: ${value}`);
 // });
 
+//DOM MANIPULATION
+// containerMovements.insertAdjacentHTML('afterbegin');//4 ways beforebegin afterbegin beforeend after end (add html elements)
+
+
+//3 methods (MAP FILTER REDUCE)
+//1)Map Method(it has also 3 paramaters same as for each method)
+// const eurToUsd = 1.1;
+// const movementsUSD = movements.map(function (mov) {
+//     return mov * eurToUsd;
+// });//returns an new array which is 1.1 times the movements array
+//2)Filter Method(converts array into filtered new array with specific conditions)
+//3)Reduce Method(reduce all elements in an array into a single variable)
+//here first index is the accumulator
+//its like a snowball which keeps accumulating all values
+// const balance = movements.reduce(function (acc, cur, i, arr) {
+//     return acc + cur;
+// },0)//0 initial value of accumulator
