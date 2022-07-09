@@ -356,3 +356,59 @@
 // const balance = movements.reduce(function (acc, cur, i, arr) {
 //     return acc + cur;
 // },0)//0 initial value of accumulator
+
+//Find Method
+// movements.find(mov => mov < 0);//returns first element which statisfies the condition
+
+// e.preventDefault();//prevent form from sumbitting
+
+//FLAT METHOD
+// const arr = [[1, 2, 3], [4, 5, 6], 7, 8];
+// console.log(arr.flat());//flats the array into a single array(but it flattens only one time)
+// const arrDeep = [[[1, 2], 3], [4, [5, 6]], 7, 8]
+// console.log(arrDeep.flat(2));//2 level depth
+
+//Flat Map(Combines flat and map together)
+// const overBalance = accounts.flatMap(acc => acc.movements).reduce((acc, mov) => acc + mov, 0);
+// console.log(overBalance);
+
+//sort
+//sort according to strings
+//so we use compare function
+// let movements = [17, 122, 4, 21, 53, 33];
+// movements.sort((a, b) =>
+//     // if (a > b) return 1;
+//     // if (b > a) return -1;
+//     a - b
+// );//asscending
+//for decending b-a;
+// console.log(movements);
+//Filling arrays and defining arrays
+// const x = new Array(7);//creates a array of size 7;
+// x.fill(1);//fills alll 7 values with 1
+// x.fill(23, 4, 6)//fills 23 from position 4 to 6 excluding 6
+// console.log(x);
+
+//MATHS AND ROUNDING
+// console.log(Math.PI * Number.parseFloat('10px') ** 2);//10px is the radius
+// console.log(Math.trunc((Math.random() * 6) + 1))//used to convert into integer
+// const randomInt = (min, max) =>
+//     Math.trunc(Math.random() * (max - min) + 1) + min;//gives a value between max and min
+// console.log(randomInt(24, 28));//value excluding 24
+
+//Rounding Decimals
+//toFixed(returns a string)
+console.log((2.7).toFixed(0));//0 decimal places ->3
+console.log((2.7).toFixed(3));//1 decimal places ->2.7
+console.log(+(2.7).toFixed(2));//2 decimal places ->2.70 + converts into int
+//max safe integer 
+console.log(2 ** 53 - 1);
+console.log(Number.MAX_SAFE_INTEGER);
+//Big int
+console.log(303973219834198721987n);
+console.log(BigInt(49387423974398374984739832));
+//big int can perform operation with normal but can work together
+
+//DATES
+const now = new Date();
+console.log(now);
