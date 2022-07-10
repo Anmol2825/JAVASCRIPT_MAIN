@@ -398,17 +398,42 @@
 
 //Rounding Decimals
 //toFixed(returns a string)
-console.log((2.7).toFixed(0));//0 decimal places ->3
-console.log((2.7).toFixed(3));//1 decimal places ->2.7
-console.log(+(2.7).toFixed(2));//2 decimal places ->2.70 + converts into int
-//max safe integer 
-console.log(2 ** 53 - 1);
-console.log(Number.MAX_SAFE_INTEGER);
+// console.log((2.7).toFixed(0));//0 decimal places ->3
+// console.log((2.7).toFixed(3));//1 decimal places ->2.7
+// console.log(+(2.7).toFixed(2));//2 decimal places ->2.70 + converts into int
+//max safe integer
+// console.log(2 ** 53 - 1);
+// console.log(Number.MAX_SAFE_INTEGER);
 //Big int
-console.log(303973219834198721987n);
-console.log(BigInt(49387423974398374984739832));
+// console.log(303973219834198721987n);
+// console.log(BigInt(49387423974398374984739832));
 //big int can perform operation with normal but can work together
 
 //DATES
-const now = new Date();
-console.log(now);
+// const now = new Date();
+// console.log(now);
+
+
+//DOM Selection
+//selecting full document
+// console.log(document.documentElement);
+// console.log(document.head);
+// const allButtons=document.getElementsByTagName('button');(selecting by element tag)
+// document.getElementsByClassName('btn')//class name
+
+// Creating and Inserting Elements
+// .insertAdjacentHTML
+// const message = document.createElement('div');
+// message.classList.add('cookie-message');
+// message.innerHTML = 'We use cookied for improved functionality and analytics. <button class="btn btn--close-cookie">Got it!</button>';
+// header.append(message);
+// header.before(message);//before header
+// header.after(message);//after header
+
+//Delete elements
+// document.querySelector('.btn--close-cookie').addEventListener('click', function () {
+//     message.remove();
+// });
+
+
+//STYLES ATTRIRBUTES AND CLASSES
