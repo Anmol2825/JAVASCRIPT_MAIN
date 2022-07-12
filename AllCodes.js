@@ -437,3 +437,49 @@
 
 
 //STYLES ATTRIRBUTES AND CLASSES
+// message.style.backgroundColor = '#37383d';
+// message.style.width = '120%';
+// console.log(message.style.backgroundColor);//only inline style get printed
+// console.log(getComputedStyle(message).color);//this shows all properties here we choose color
+
+// set css style
+// document.documentElement.style.setProperty('--color-primary','orangered');
+
+//Atributes
+// const logo = document.querySelector('.nav__logo');
+// console.log(logo.alt);
+// console.log(logo.src);
+// console.log(logo.designer);//not standard property so wont work
+// logo.alt = 'Beautiful minimalist logo'
+//Non standard
+// console.log(logo.getAttribute('designer'));
+// logo.setAttribute('company','Bankist');//absoulte
+// console.log(logo.getAttribute('src'));
+
+//Data attributes
+// console.log(logo.dataset.versionNumber);
+
+//Classes
+// logo.classList.add('c', 'j');
+// logo.classList.remove('c', 'j');
+// logo.classList.toggle('c');
+// logo.classList.contains('c');
+
+//DOM
+// section1.getBoundingClientRect();//it gets all the bottom up left right top width of the element
+//window.pageXOffset, pageYOffset tells the amount of scroll we have got in x and y direction
+//document.documentElement.clientHeight,document.documentElement.clientWidth (Tells us the clientHeight and clientWidth);
+
+//Scrolling ways
+// window.scrollTo(s1coords.left + window.pageXOffset, s1coords.right + window.pageYOffset);
+
+
+//Smooth Scrooling
+// window.scrollTo({
+//   left: s1coords.left + window.pageXOffset,
+//   top: s1coords.top + window.pageYOffset,
+//   behavior: 'smooth',
+// });
+
+//Modern ways
+section1.scrollIntoView({ behavior: 'smooth' });
