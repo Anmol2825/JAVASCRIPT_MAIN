@@ -482,4 +482,35 @@
 // });
 
 //Modern ways
-section1.scrollIntoView({ behavior: 'smooth' });
+// section1.scrollIntoView({ behavior: 'smooth' });
+
+//Mouseenter(when hovering the mouse pointer)
+// const h1 = document.querySelector('h1');
+// h1.addEventListener('mouseenter', function (e) {
+//   alert('addEventListener: Great! You are reading the heading :D');
+// })
+
+
+//DOM Traversing
+const h1 = document.querySelector('h1');
+
+//Going downwards: child
+console.log(h1.querySelector('.highlight'));//select all highlight class under h1 going complete deep
+console.log(h1.childNodes);//select only just deep
+console.log(h1.children);
+h1.firstElementChild.style.color = 'white';
+
+//Going upwards: parents
+console.log(h1.parentNode);
+console.log(h1.parentElement);
+//selecting closest element
+h1.closest('.header').style.background = 'var(--gradient-secondary)';
+
+//Going Sideways: siblings
+console.log(h1.previousElementSibling);
+console.log(h1.nextElementSibling);
+
+console.log(h1.previousSibling);
+console.log(h1.nextSibling);
+
+console.log(h1.parentElement.children);//get all siblings
