@@ -1,5 +1,5 @@
 //Always to use strict mode
-// 'use strict'
+'use strict'
 
 //Open Project in live server
 // live-server
@@ -492,25 +492,126 @@
 
 
 //DOM Traversing
-const h1 = document.querySelector('h1');
+// const h1 = document.querySelector('h1');
 
-//Going downwards: child
-console.log(h1.querySelector('.highlight'));//select all highlight class under h1 going complete deep
-console.log(h1.childNodes);//select only just deep
-console.log(h1.children);
-h1.firstElementChild.style.color = 'white';
+// //Going downwards: child
+// console.log(h1.querySelector('.highlight'));//select all highlight class under h1 going complete deep
+// console.log(h1.childNodes);//select only just deep
+// console.log(h1.children);
+// h1.firstElementChild.style.color = 'white';
 
-//Going upwards: parents
-console.log(h1.parentNode);
-console.log(h1.parentElement);
-//selecting closest element
-h1.closest('.header').style.background = 'var(--gradient-secondary)';
+// //Going upwards: parents
+// console.log(h1.parentNode);
+// console.log(h1.parentElement);
+// //selecting closest element
+// h1.closest('.header').style.background = 'var(--gradient-secondary)';
 
-//Going Sideways: siblings
-console.log(h1.previousElementSibling);
-console.log(h1.nextElementSibling);
+// //Going Sideways: siblings
+// console.log(h1.previousElementSibling);
+// console.log(h1.nextElementSibling);
 
-console.log(h1.previousSibling);
-console.log(h1.nextSibling);
+// console.log(h1.previousSibling);
+// console.log(h1.nextSibling);
 
-console.log(h1.parentElement.children);//get all siblings
+// console.log(h1.parentElement.children);//get all siblings
+
+
+
+//OOPS
+//Constructor Function
+// const Person = function (firstName, birthYear) {
+//     this.firstName = firstName;
+//     this.birthYear = birthYear;
+
+//     //Never do this
+//     // this.calcAge = function () {
+//     //     console.log(2037 - this.birthYear);
+//     // };
+
+// };
+// const jonas = new Person('Jonas', 1991);
+// console.log(jonas);
+//1. New {} is created
+//2. Function is called,
+//3. {} linked to prototype
+//4. function automatically return {}
+
+//Prototypes
+// Person.prototype.calcAge = function () {
+//     console.log(2037 - this.birthYear);
+// };
+// jonas.calcAge();
+// console.log(jonas.__proto__);//prototype of jonas
+// console.log(Person.prototype.isPrototypeOf(jonas));//Person.prototype is the prototype of person objects
+// console.log(Person.prototype.isPrototypeOf(Person));//Not prototype of itself
+
+// Person.prototype.species = 'Homo Sapiens';
+// console.log(jonas.species);//property also goes to its objects
+// console.log(jonas.hasOwnProperty('calcAge'));//false
+// console.log(jonas.hasOwnProperty('species'));//false as species is prototype property
+// console.log(jonas.__proto__.__proto__);//Object.prototype(Top of the chain)
+// console.log(jonas.__proto__.__proto__.__proto__);//will give null
+
+// const arr = [3, 6, 4, 5, 6, 9, 3, 9];
+// console.log(arr.__proto__);
+// console.log(arr.__proto__ === Array.prototype);
+
+// console.log(arr.__proto__.__proto__);
+// //In practice we must not do it
+// Array.prototype.unique = function () {//we added new property of Array
+//     return [...new Set(this)];
+// }
+
+//Class Expression
+// const PersonCl=class{}
+
+//class declaration
+// class PersonCl {
+//     constructor(firstName, birthYear) {
+//         this.firstName = firstName;
+//         this.birthYear = birthYear;
+//     }
+//     //Methods will be added to .prototype property
+//     calcAge() {
+//         console.log(2037 - this.birthYear);
+//     }
+
+//     set fullName(name) {
+//         console.log(name);
+//         if (name.includes(' ')) this._fullName = name;
+//         else alert(`${name} is not a full name!`);
+//     }
+
+//     get fullName() {
+//         return this._fullName;
+//     }
+//     //Static Method
+//      static hey(){
+//          console.log('Hey there');
+//      }
+// }
+
+// const jessica = new PersonCl('Jessica', 1996)
+// console.log(jessica);
+// jessica.calcAge();
+
+// //1. Classes are NOT hoisted
+// //2. Classes are first-class citizens
+// //3. Classes are excuted in strict mode
+
+// // Getters and Setters
+// const account = {
+//     owner: 'jonas',
+//     movements: [200, 530, 120, 300],
+
+//     get latest() {
+//         return this.movements.slice(-1).pop();
+//     },
+//     set latest(mov) {
+//         this.movements.push(mov);
+//     }
+// }
+// console.log(account.latest);
+// account.latest = 50;
+// console.log(account.movements);
+// We can do this with classes also
